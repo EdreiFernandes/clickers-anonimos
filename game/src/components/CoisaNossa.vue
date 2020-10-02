@@ -26,10 +26,14 @@ export default {
   methods: {
     venderGuarana() {
       this.guaranas++;
+      var cookie = this.guaranas;
+      this.$cookies.set("pipoca", cookie);
     },
+  },
+  mounted() {
+    this.guaranas = this.$cookies.get("pipoca");
   },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
